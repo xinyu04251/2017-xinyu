@@ -10,17 +10,17 @@ public class StuInfo {
     private String stuNat; 
     private Integer stuAge;
     private String stuPhone;
+    private Integer classId;
+    private Integer stuState;
     private ClassInfo ci;
     
     public StuInfo(){
     	
     }
-    
 	
-
 	public StuInfo(Integer stuNo, String stuId, String stuPass, String stuName,
 			String stuSex, String stuOri, String stuNat, Integer stuAge,
-			String stuPhone, ClassInfo ci) {
+			String stuPhone, Integer classId, Integer stuState, ClassInfo ci) {
 		super();
 		this.stuNo = stuNo;
 		this.stuId = stuId;
@@ -31,9 +31,11 @@ public class StuInfo {
 		this.stuNat = stuNat;
 		this.stuAge = stuAge;
 		this.stuPhone = stuPhone;
+		this.classId = classId;
+		this.stuState = stuState;
 		this.ci = ci;
 	}
-	
+
 	public Integer getStuNo() {
 		return stuNo;
 	}
@@ -114,17 +116,29 @@ public class StuInfo {
 		this.ci = ci;
 	}
 
+	public Integer getClassId() {
+		return classId;
+	}
 
+	public void setClassId(Integer classId) {
+		this.classId = classId;
+	}
+
+	public Integer getStuState() {
+		return stuState;
+	}
+
+	public void setStuState(Integer stuState) {
+		this.stuState = stuState;
+	}
 
 	@Override
 	public String toString() {
 		return "StuInfo [stuNo=" + stuNo + ", stuId=" + stuId + ", stuPass="
 				+ stuPass + ", stuName=" + stuName + ", stuSex=" + stuSex
 				+ ", stuOri=" + stuOri + ", stuNat=" + stuNat + ", stuAge="
-				+ stuAge + ", stuPhone=" + stuPhone + ", ci=" + ci
-				+  "]";
+				+ stuAge + ", stuPhone=" + stuPhone + ", classId=" + classId
+				+ ", stuState=" + stuState + ", ci=" + ci + "]";
 	}
-
-	
     
 }

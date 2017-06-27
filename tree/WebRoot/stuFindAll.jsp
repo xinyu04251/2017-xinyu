@@ -32,7 +32,7 @@
 <c:if test="${empty STUINFO }">
 	<c:redirect url="StuServlet">
 		<c:param name="method" value="findAll"></c:param>
-		<c:param name="page" value="1"></c:param>
+		<%-- <c:param name="page" value="1"></c:param> --%>
 	</c:redirect>
 </c:if>
 <body>
@@ -70,11 +70,11 @@
 				<td>${si.stuPhone }</td>
 				<td>${si.ci.gi.graName }.${si.ci.className }</td>
 				<td><a href="javascript:deleteStu(${si.stuNo })">É¾³ý</a> <a
-					href="StuServlet?method=findByNo&stuNo=${si.stuNo }">ÐÞ¸Ä</a></td>
+					href="StuServlet?method=findById&stuNo=${si.stuNo }">ÐÞ¸Ä</a></td>
 			</tr>
 		</c:forEach>
 		
-		<tr>
+		<%-- <tr>
 			<td colspan="10" align="right">
 				<c:forEach var="i" begin="1" end="${PAGE }" step="1">
 					<c:choose>
@@ -87,7 +87,7 @@
 					</c:choose>	
 				</c:forEach>
 			</td>
-		</tr>
+		</tr> --%>
 	</table>
 </body>
 </html>
