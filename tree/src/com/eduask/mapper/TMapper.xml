@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eduask.mapper.TMapper">
+  <resultMap type="com.eduask.bean.TInfo" id="t">
+    <id column="tNo" property="tNo"/>
+    <result column="tId" property="tId"/>
+    <result column="tPass" property="tPass"/>
+    <result column="tName" property="tName"/>
+    <result column="tSex" property="tSex"/>
+    <result column="tOri" property="tOri"/>
+    <result column="tNat" property="tNat"/>
+    <result column="tAge" property="tAge"/>
+    <result column="tPhone" property="tPhone"/>
+    <result column="eduBac" property="eduBac"/>
+    <result column="subId" property="subId"/>
+    <result column="roleId" property="roleId"/>
+    <result column="tState" property="tState"/>
+    <association property="si" javaType="com.eduask.bean.SubInfo">
+      <id column="subId" property="subId"/>
+      <result column="subName" property="subName"/>
+    </association>
+    <association property="ri" javaType="com.eduask.bean.RoleInfo">
+      <id column="roleId" property="roleId"/>
+      <result column="roleName" property="roleName"/>
+    </association>
+  </resultMap>
+  <select id="findAll" resultMap="t">
+    select *from tInfo t,subInfo s,roleInfo r where t.subId=s.subId and t.roleId=r.roleId
+  </select>
+  <select id="findById" resultType="com.eduask.bean.TInfo" parameterType="int">
+    select *from tInfo where tNo = #{tNo}
+  </select>
+  <select id="findBy" resultType="com.eduask.bean.TInfo" parameterType="java.lang.String">
+    select *from tInfo where tName like #{str}
+  </select>
+  <insert id="add" parameterType="com.eduask.bean.TInfo">
+    insert into tInfo values(null,#{tId},#{tPass},#{tName},#{tSex},#{tOri},#{tNat},#{tAge},#{tPhone},#{eduBac},#{subId},#{roleId},1) 
+  </insert>
+  <update id="update" parameterType="com.eduask.bean.TInfo">
+    update tInfo set tId=#{tId},tPass=#{tPass},tName=#{tName},tSex=#{tSex},tOri=#{tOri},tNat=#{tNat},tAge=#{tAge},tPhone=#{tPhone},eduBac=#{eduBac},subId=#{subId},roleId=#{roleId} where tNo=#{tNo}
+  </update>
+  <delete id="delete" parameterType="int">
+    delete from tInfo where tNo=#{tNo}
+  </delete>
+</mapper>

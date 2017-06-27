@@ -19,5 +19,6 @@
 	  <mapper resource="com/eduask/mapper/StuMapper.xml"></mapper>
 	  <mapper resource="com/eduask/mapper/ClassMapper.xml"></mapper>
 	  <mapper resource="com/eduask/mapper/GraMapper.xml"></mapper>
+	  <mapper resource="com/eduask/mapper/TMapper.xml"></mapper>
 	</mappers>
 </configuration>

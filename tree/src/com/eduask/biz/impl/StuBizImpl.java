@@ -43,4 +43,5 @@ public class StuBizImpl implements StuBiz {
 		sm.delete(sno);
 		session.commit();
 	}
+	
 }

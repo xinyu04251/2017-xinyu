@@ -14,6 +14,8 @@ public class TInfo {
     private Integer subId;
     private Integer roleId;
     private Integer tState;
+    private SubInfo si;
+    private RoleInfo ri;
     
     public TInfo(){
     	
@@ -21,8 +23,8 @@ public class TInfo {
 
 	public TInfo(Integer tNo, Integer tId, String tPass, String tName,
 			String tSex, String tOri, String tNat, Integer tAge, String tPhone,
-			String eduBac, Integer subId, Integer roleId, Integer tState) {
-		super();
+			String eduBac, Integer subId, Integer roleId, Integer tState,
+			SubInfo si, RoleInfo ri) {
 		this.tNo = tNo;
 		this.tId = tId;
 		this.tPass = tPass;
@@ -36,6 +38,8 @@ public class TInfo {
 		this.subId = subId;
 		this.roleId = roleId;
 		this.tState = tState;
+		this.si = si;
+		this.ri = ri;
 	}
 
 	public Integer gettNo() {
@@ -142,15 +146,39 @@ public class TInfo {
 		this.tState = tState;
 	}
 
+	public SubInfo getSi() {
+		return si;
+	}
+
+	public void setSi(SubInfo si) {
+		this.si = si;
+	}
+
+	public RoleInfo getRi() {
+		return ri;
+	}
+
+	public void setRi(RoleInfo ri) {
+		this.ri = ri;
+	}
+
 	@Override
 	public String toString() {
 		return "TInfo [tNo=" + tNo + ", tId=" + tId + ", tPass=" + tPass
 				+ ", tName=" + tName + ", tSex=" + tSex + ", tOri=" + tOri
 				+ ", tNat=" + tNat + ", tAge=" + tAge + ", tPhone=" + tPhone
 				+ ", eduBac=" + eduBac + ", subId=" + subId + ", roleId="
-				+ roleId + ", tState=" + tState + "]";
+				+ roleId + ", tState=" + tState + ", si=" + si + ", ri=" + ri
+				+ ", gettNo()=" + gettNo() + ", gettId()=" + gettId()
+				+ ", gettPass()=" + gettPass() + ", gettName()=" + gettName()
+				+ ", gettSex()=" + gettSex() + ", gettOri()=" + gettOri()
+				+ ", gettNat()=" + gettNat() + ", gettAge()=" + gettAge()
+				+ ", gettPhone()=" + gettPhone() + ", getEduBac()="
+				+ getEduBac() + ", getSubId()=" + getSubId() + ", getRoleId()="
+				+ getRoleId() + ", gettState()=" + gettState() + ", getSi()="
+				+ getSi() + ", getRi()=" + getRi() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ "]";
 	}
 
-	
-	
 }
