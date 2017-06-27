@@ -17,10 +17,14 @@
 	  <association property="ci" javaType="com.eduask.bean.ClassInfo">
 	    <id column="classId" property="classId"/>
 	    <result column="className" property="className"/>
+	    <association property="gi" javaType="com.eduask.bean.GraInfo">
+	      <id column="graId" property="graId"/>
+	      <result column="graName" property="graName"/>
+	    </association>
 	  </association>
 	</resultMap>
 	
 	  <select id="findAll" resultMap="stu">
-	    SELECT * FROM StuInfo s ,ClassInfo c WHERE s.`classId`=c.`classId`
+	    SELECT * FROM GraInfo g ,ClassInfo c ,StuInfo s WHERE g.`graId`=c.`graId` AND c.`classId`=s.`classId`
 	  </select>
 	</mapper>

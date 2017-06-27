@@ -68,7 +68,7 @@
 				<td>${si.stuNat }</td>
 				<td>${si.stuAge }</td>
 				<td>${si.stuPhone }</td>
-				<td>${si.ci.className }</td>
+				<td>${si.ci.gi.graName }.${si.ci.className }</td>
 				<td><a href="javascript:deleteStu(${si.stuNo })">É¾³ý</a> <a
 					href="StuServlet?method=findByNo&stuNo=${si.stuNo }">ÐÞ¸Ä</a></td>
 			</tr>
