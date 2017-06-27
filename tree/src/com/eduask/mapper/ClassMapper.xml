@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eduask.mapper.ClassMapper">
+
+	<resultMap type="com.eduask.bean.ClassInfo" id="cla">
+		<id column="classId" property="classId" />
+		<result column="className" property="className" />
+		<collection property="stuSet" ofType="com.eduask.bean.StuInfo"
+			column="classId">
+			<id column="stuNo" property="stuNo" />
+			<result column="stuId" property="stuId" />
+			<result column="stuPass" property="stuPass" />
+			<result column="stuName" property="stuName" />
+			<result column="stuSex" property="stuSex" />
+			<result column="stuOri" property="stuOri" />
+			<result column="stuNat" property="stuNat" />
+			<result column="stuAge" property="stuAge" />
+			<result column="stuPhone" property="stuPhone" />
+		</collection>
+	</resultMap>
+	<select id="findAll" resultMap="cla">
+		SELECT * FROM StuInfo s ,ClassInfo c WHERE s.`classId`=c.`classId`
+	</select>
+</mapper>
